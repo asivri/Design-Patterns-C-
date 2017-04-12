@@ -77,7 +77,24 @@ private:
 
 //TODO: Ask if it's client class or subclass?
 class InputReceiver{
-    
+public:
+    vector<int> UserInput()
+    {
+        int size;
+        cout<<"Please enter the number of items to enter: ";
+        cin>>size;
+
+        for(int i=0 ; i<size; i++)
+        {
+            cout<<"Element #"<<i+1<<": ";
+            cin>>input;
+            vectorByUser.push_back(input);
+        }
+        return vectorByUser;
+    }
+private:
+    int input;
+    vector<int> vectorByUser;
 };
 
 
@@ -87,9 +104,11 @@ int main() {
     Deviation *dObj = new Deviation();
     Variance *vObj = new Variance();
     StandardDeviation *sObj = new StandardDeviation();
+    InputReceiver *rObj = new InputReceiver();
 
     //Declaration of the facade class object;
     CalculatorFacade *fObj = new CalculatorFacade(0);
+
 
     //Declaration of the local variables
     double mean;
@@ -99,16 +118,20 @@ int main() {
 
     //Declaration of the vector will be used for computations.
     vector<int> mainVec;
-    mainVec.push_back(1);
-    mainVec.push_back(2);
-    mainVec.push_back(3);
-    mainVec.push_back(4);
-    mainVec.push_back(5);
-    mainVec.push_back(6);
-    mainVec.push_back(7);
-    mainVec.push_back(8);
-    mainVec.push_back(9);
-    mainVec.push_back(10);
+//    mainVec.push_back(1);
+//    mainVec.push_back(2);
+//    mainVec.push_back(3);
+//    mainVec.push_back(4);
+//    mainVec.push_back(5);
+//    mainVec.push_back(6);
+//    mainVec.push_back(7);
+//    mainVec.push_back(8);
+//    mainVec.push_back(9);
+//    mainVec.push_back(10);
+
+    //Getting the user input
+    //TODO: Ask that partition
+    mainVec = rObj->UserInput();
 
     //Calling the functions from classes.
     mean = mObj->ComputeMean(mainVec);
