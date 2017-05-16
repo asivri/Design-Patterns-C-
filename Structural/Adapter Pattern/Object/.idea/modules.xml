@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Facade Pattern.iml" filepath="$PROJECT_DIR$/.idea/Facade Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Object.iml" filepath="$PROJECT_DIR$/.idea/Object.iml" />
     </modules>
   </component>
 </project>
